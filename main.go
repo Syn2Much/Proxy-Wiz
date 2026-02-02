@@ -304,7 +304,7 @@ func loadProxies(proxyFile string) []string {
 
 // testProxy tests a single proxy and returns ProxyInfo if it works, nil otherwise
 func testProxy(proxyStr string, timeout int) *ProxyInfo {
-	originalProxy := proxyStr
+	//originalProxy := proxyStr
 	// Only add http:// if the proxy doesn't already have a scheme
 	if !strings.HasPrefix(proxyStr, "http://") && !strings.HasPrefix(proxyStr, "https://") {
 		proxyStr = "http://" + proxyStr
@@ -387,10 +387,10 @@ func testProxy(proxyStr string, timeout int) *ProxyInfo {
 		return nil
 	}
 
-	logSuccess("Working proxy found", "proxy", originalProxy, "ip", ipData.IP, "country", ipData.Country, "city", ipData.City)
+	logSuccess("Working proxy found", "proxy", proxyStr, "ip", ipData.IP, "country", ipData.Country, "city", ipData.City)
 
 	return &ProxyInfo{
-		Proxy:       originalProxy,
+		Proxy:       proxyStr,
 		TestedAt:    time.Now().UTC().Format(time.RFC3339),
 		IP:          ipData.IP,
 		Success:     ipData.Success,
@@ -490,7 +490,7 @@ func checkerMain(proxyFile string, timeout int, numWorkers int) {
 				working := len(workingProxies)
 
 				if proxyInfo != nil {
-					checkedFile.WriteString(proxyStr + "\n")
+					checkedFile.WriteString(proxyInfo.Proxy + "\n")
 					workingProxies = append(workingProxies, *proxyInfo)
 					working = len(workingProxies)
 					saveJSON(workingProxies)
