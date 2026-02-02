@@ -69,28 +69,35 @@ Detailed JSON with geolocation data:
 
 ```json
 [
-  {
-    "proxy": "192.168.1.1:8080",
-    "tested_at": "2026-02-02T14:32:16Z",
-    "ip": "104.12.255.182",
+ {
+    "proxy": "117.0.193.252:10010",
+    "tested_at": "2026-02-02T18:15:18Z",
+    "ip": "117.0.197.152",
+    "success": true,
     "type": "IPv4",
-    "country": "United States",
-    "country_code": "US",
-    "region": "North Carolina",
-    "city": "Charlotte",
-    "latitude": 35.2270869,
-    "longitude": -80.8431267,
+    "continent": "Asia",
+    "country": "Vietnam",
+    "country_code": "VN",
+    "region": "Hanoi",
+    "region_code": "HN",
+    "city": "Hanoi",
+    "latitude": 21.0277644,
+    "longitude": 105.8341598,
     "is_eu": false,
+    "postal": "110905",
     "connection": {
-      "asn": 7018,
-      "org": "AT&T Enterprises, LLC",
-      "isp": "AT&T Enterprises, LLC",
-      "domain": "att.com"
+      "asn": 7552,
+      "org": "ADSL HNI",
+      "isp": "Viettel Group",
+      "domain": "viettel.com.vn"
     },
     "timezone": {
-      "id": "America/New_York",
-      "abbr": "EST",
-      "utc": "-05:00"
+      "id": "Asia/Saigon",
+      "abbr": "+07",
+      "is_dst": false,
+      "offset": 25200,
+      "utc": "+07:00",
+      "current_time": "2026-02-03T01:15:17+07:00"
     }
   }
 ]
